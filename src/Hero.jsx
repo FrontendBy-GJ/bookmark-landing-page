@@ -3,7 +3,7 @@ import hero from './assets/illustration-hero.svg';
 
 export default function Hero() {
   return (
-    <div className="hero lg:relative overflow-hidden max-w-[1440px] mx-auto">
+    <div className="hero lg:relative overflow-hidden max-w-[1440px] mx-auto z-0">
       <div className="hero-content flex-col lg:flex-row-reverse text-center lg:text-left">
         <div className="relative mb-10 lg:mb-0 lg:static">
           <div className="h-3/4 lg:h-2/3 bg-primary rounded-l-full absolute bottom-0 -right-16 md:-right-28 lg:right-0 lg:w-2/5 w-full -z-10"></div>

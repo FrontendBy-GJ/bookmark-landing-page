@@ -5,11 +5,25 @@ import twitter from './assets/icon-twitter.svg';
 export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
 
-  const toggleNav = () => setShowNav(!showNav);
+  function openMenu() {
+    setShowNav(true);
+
+    if (typeof window != 'undefined' && window.document) {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeMenu() {
+    setShowNav(false);
+
+    document.body.style.overflow = 'unset';
+  }
 
   return (
-    <header className="">
-      <div className="navbar max-w-screen-xl mx-auto flex-row justify-center lg:py-10 p-8">
+    <header className="bg-white">
+      <div
+        className={`navbar max-w-7xl mx-auto flex-row justify-center lg:py-10 p-8`}
+      >
         <div className="flex-1 z-50">
           <svg
             className="cursor-pointer"
@@ -57,41 +71,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* mobile nav menu */}
-        {showNav && (
-          <section
-            className={`fixed top-0 w-full bg-dark/95 h-screen z-0 flex flex-col p-8 lg:hidden`}
-          >
-            <nav aria-label="mobile" className="mx-auto w-full mt-16">
-              {links.map((item, i) => (
-                <a
-                  href="/"
-                  key={item}
-                  className={`block text-white uppercase hover:bg-neutral/50 py-5 text-center border-neutral/30 tracking-widest font-normal ${
-                    links.length - 3 === i
-                      ? 'border-t'
-                      : links.length - 2 === i
-                      ? 'border-t border-b'
-                      : 'border-b'
-                  }`}
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
-            <div className="mt-6 w-full">
-              <button className="btn btn-outline uppercase text-white tracking-wider text-lg w-full rounded-md font-normal">
-                log in
-              </button>
-            </div>
-
-            <div className="flex mt-auto gap-8">
-              <img src={facebook} alt="facebook logo" />
-              <img src={twitter} alt="twitter logo" />
-            </div>
-          </section>
-        )}
-
         <div className="lg:hidden z-50">
           {!showNav ? (
             <svg
@@ -99,7 +78,7 @@ export default function Navbar() {
               width="18"
               height="15"
               className="cursor-pointer"
-              onClick={toggleNav}
+              onClick={openMenu}
             >
               <path
                 fill="#242A45"
@@ -113,7 +92,7 @@ export default function Navbar() {
               width="16"
               height="15"
               className="cursor-pointer"
-              onClick={toggleNav}
+              onClick={closeMenu}
             >
               <path
                 fill="#FFF"
@@ -124,6 +103,40 @@ export default function Navbar() {
           )}
         </div>
       </div>
+      {/* mobile nav menu */}
+      {showNav && (
+        <section
+          className={`fixed top-0 w-full bg-dark/95 h-screen flex flex-col p-8 lg:hidden items-center z-40`}
+        >
+          <nav aria-label="mobile" className="mx-auto w-full mt-16">
+            {links.map((item, i) => (
+              <a
+                href="/"
+                key={item}
+                className={`block text-white uppercase hover:bg-neutral/50 py-5 text-center border-neutral/30 tracking-widest font-normal ${
+                  links.length - 3 === i
+                    ? 'border-t'
+                    : links.length - 2 === i
+                    ? 'border-t border-b'
+                    : 'border-b'
+                }`}
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+          <div className="mt-6 w-full">
+            <button className="btn btn-outline uppercase text-white tracking-wider text-lg w-full rounded-md font-normal">
+              log in
+            </button>
+          </div>
+
+          <div className="flex mt-auto gap-8">
+            <img src={facebook} alt="facebook logo" />
+            <img src={twitter} alt="twitter logo" />
+          </div>
+        </section>
+      )}
     </header>
   );
 }
