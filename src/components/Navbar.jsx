@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import facebook from './assets/icon-facebook.svg';
-import twitter from './assets/icon-twitter.svg';
+import facebook from '../assets/icon-facebook.svg';
+import twitter from '../assets/icon-twitter.svg';
 
 export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
@@ -126,7 +126,7 @@ export default function Navbar() {
             ))}
           </nav>
           <div className="mt-6 w-full">
-            <button className="btn btn-outline uppercase text-white tracking-wider text-lg w-full rounded-md font-normal">
+            <button className="btn btn-outline uppercase text-white tracking-wider text-lg w-full sm:max-w-sm mx-auto block rounded-md font-normal">
               log in
             </button>
           </div>
