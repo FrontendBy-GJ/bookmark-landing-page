@@ -58,7 +58,7 @@ export default function Navbar() {
           <nav className="space-x-14" aria-label="main">
             {links.map((item) => (
               <a
-                href="/"
+                href={`#${item}`}
                 key={item}
                 className="uppercase text-sm text-neutral-dark tracking-wider"
               >
@@ -111,7 +111,8 @@ export default function Navbar() {
           <nav aria-label="mobile" className="mx-auto w-full mt-16">
             {links.map((item, i) => (
               <a
-                href="/"
+                href={`#${item}`}
+                onClick={closeMenu}
                 key={item}
                 className={`block text-white uppercase hover:bg-neutral/50 py-5 text-center border-neutral/30 tracking-widest font-normal ${
                   links.length - 3 === i
