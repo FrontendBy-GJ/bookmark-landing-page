@@ -21,9 +21,7 @@ export default function Navbar() {
 
   return (
     <header className="bg-white">
-      <div
-        className={`navbar max-w-7xl mx-auto flex-row justify-center lg:py-10 p-8`}
-      >
+      <div className="navbar max-w-[1440px] mx-auto flex-row justify-center py-10 px-5 md:px-10 xl:px-28">
         <div className="flex-1 z-50">
           <svg
             className="cursor-pointer"
