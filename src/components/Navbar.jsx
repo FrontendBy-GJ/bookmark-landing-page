@@ -58,13 +58,13 @@ export default function Navbar() {
               <a
                 href={`#${item}`}
                 key={item}
-                className="uppercase text-sm text-neutral-dark tracking-wider"
+                className="uppercase text-sm text-base-200 hover:text-secondary tracking-wider"
               >
                 {item}
               </a>
             ))}
           </nav>
-          <button className="btn bg-accent uppercase ml-10 px-12 border-none rounded-md shadow-lg">
+          <button className="btn bg-secondary hover:border-secondary text-white hover:text-secondary uppercase ml-10 px-12 rounded-md shadow-lg">
             log in
           </button>
         </div>
@@ -104,7 +104,7 @@ export default function Navbar() {
       {/* mobile nav menu */}
       {showNav && (
         <section
-          className={`fixed top-0 w-full bg-dark/95 h-screen flex flex-col p-8 lg:hidden items-center z-40`}
+          className={`fixed top-0 w-full bg-base-200/95 h-screen flex flex-col p-8 lg:hidden items-center z-40`}
         >
           <nav aria-label="mobile" className="mx-auto w-full mt-16">
             {links.map((item, i) => (
@@ -125,7 +125,7 @@ export default function Navbar() {
             ))}
           </nav>
           <div className="mt-6 w-full">
-            <button className="btn btn-outline uppercase text-white tracking-wider text-lg w-full sm:max-w-sm mx-auto block rounded-md font-normal">
+            <button className="btn btn-outline hover:bg-white hover:text-base-200 hover:border-inherit uppercase text-white tracking-wider text-lg w-full sm:max-w-sm mx-auto block rounded-md font-normal">
               log in
             </button>
           </div>
