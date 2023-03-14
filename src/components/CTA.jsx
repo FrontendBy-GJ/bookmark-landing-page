@@ -6,9 +6,12 @@ import dots from '../assets/bg-dots.svg';
 
 export default function CTA() {
   return (
-    <section className="max-w-[1440px] min-h-screen grid place-content-center py-5 mx-auto">
+    <section
+      id="pricing"
+      className="max-w-[1440px] min-h-screen grid place-content-center py-5 mx-auto"
+    >
       <div className="px-7">
-        <div className="prose mx-auto text-center mb-10 max-w-lg">
+        <div className="prose mx-auto text-center mb-10 max-w-lg prose-headings:text-base-200">
           <h2>Download the extension</h2>
           <p className="text-neutral">
             We’ve got more browsers in the pipeline. Please do let us know if
@@ -33,18 +36,18 @@ export default function CTA() {
 
 function Card({ card, className }) {
   return (
-    <div className={`card bg-base-100 max-h-96 shadow-lg mx-auto ${className}`}>
+    <div className={`card bg-white max-h-96 shadow-lg mx-auto ${className}`}>
       <figure className="px-10 pt-10">
         <img src={card.logo} alt={card.alt} className="rounded-xl" />
       </figure>
       <div className="card-body items-center text-center">
-        <h4 className="card-title">{card.title}</h4>
+        <h4 className="card-title text-base-200">{card.title}</h4>
         <p className="text-neutral">{card.brief}</p>
         <div className="my-5 -mx-7">
           <img src={dots} alt="divider" />
         </div>
         <div className="card-actions">
-          <button tabIndex={0} className="btn bg-primary border-none">
+          <button tabIndex={0} className="btn bg-primary ">
             {card.button}
           </button>
         </div>
