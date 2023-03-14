@@ -10,6 +10,18 @@
   }
 }
 
+@layer components {
+  .link-hover:hover {
+    @apply text-secondary no-underline;
+  }
+  .btn {
+    @apply border-transparent text-white;
+  }
+  .btn-outline:hover {
+    @apply text-secondary bg-white border-2 border-secondary;
+  }
+}
+
 * {
   scroll-behavior: smooth;
 }

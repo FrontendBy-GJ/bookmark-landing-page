@@ -5,14 +5,25 @@ module.exports = {
     extend: {
       colors: {
         primary: 'hsl(231, 69%, 60%)',
-        accent: 'hsl(0, 94%, 66%)',
+        secondary: 'hsl(0, 94%, 66%)',
         neutral: 'hsl(229, 8%, 60%)',
-        dark: 'hsl(229, 31%, 21%)',
+        'base-200': 'hsl(229, 31%, 21%)',
       },
     },
   },
   daisyui: {
-    themes: false,
+    themes: [
+      {
+        mytheme: {
+          primary: 'hsl(231, 69%, 60%)',
+          secondary: 'hsl(0, 94%, 66%)',
+          neutral: 'hsl(229, 8%, 60%)',
+          'base-200': 'hsl(229, 31%, 21%)',
+
+          '--btn-text-case': 'capitalize',
+        },
+      },
+    ],
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };
