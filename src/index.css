@@ -17,6 +17,9 @@
   .btn {
     @apply border-transparent text-white;
   }
+  .btn:hover {
+    @apply bg-white text-primary border-2 border-primary;
+  }
   .btn-outline:hover {
     @apply text-secondary bg-white border-2 border-secondary;
   }

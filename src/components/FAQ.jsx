@@ -9,7 +9,7 @@ export default function FAQ() {
 
   return (
     <section className="max-w-[1440px] mx-auto grid place-content-center py-40">
-      <div className="px-7 prose max-w-lg">
+      <div className="px-7 prose max-w-lg prose-headings:text-base-200">
         <div className="text-center">
           <h2>Frequently Asked Questions</h2>
           <p className="text-neutral">
@@ -28,7 +28,7 @@ export default function FAQ() {
             i={i}
           />
         ))}
-        <button className="btn bg-primary border-none shadow-md block mx-auto mt-10 capitalize px-8">
+        <button className="btn bg-primary shadow-md block mx-auto mt-10 px-8">
           More Info
         </button>
       </div>
@@ -38,26 +38,21 @@ export default function FAQ() {
 
 function Dropdown({ faq, onClick, showAnswer, i }) {
   return (
-    <div className="overflow-hidden border-b py-4">
+    <div className="overflow-hidden border-b border-t lg:border-t-0 py-4">
       <div
         onClick={onClick}
         className="flex items-center cursor-pointer justify-between"
       >
-        <h5 className="">{faq.question}</h5>
+        <h5 className="hover:text-secondary flex-1">{faq.question}</h5>
         <svg
           className={`${
-            showAnswer === i ? 'rotate-180' : ''
-          } transition duration-300 ease-in-out`}
+            showAnswer === i ? 'rotate-180 stroke-secondary' : ''
+          } transition duration-300 ease-in-out stroke-primary`}
           xmlns="http://www.w3.org/2000/svg"
           width="18"
           height="12"
         >
-          <path
-            fill="none"
-            stroke={`${showAnswer === i ? 'hsl(0, 94%, 66%)' : '#5267DF'}`}
-            strokeWidth="3"
-            d="M1 1l8 8 8-8"
-          />
+          <path fill="none" strokeWidth="3" d="M1 1l8 8 8-8" />
         </svg>
       </div>
 
