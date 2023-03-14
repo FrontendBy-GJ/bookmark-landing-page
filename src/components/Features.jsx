@@ -13,10 +13,10 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="py-40 max-w-[1440px] mx-auto overflow-hidden -scroll-mt-32"
+      className="py-40 max-w-[1440px] mx-auto overflow-hidden -scroll-mt-36"
     >
       <div className="px-7">
-        <div className="text-center prose mb-10 max-w-md mx-auto">
+        <div className="text-center prose mb-10 max-w-md mx-auto prose-headings:text-base-200">
           <h2 className="">Features</h2>
           <p className="text-neutral">
             Our aim is to make it quick and easy for you to access your
@@ -38,14 +38,14 @@ export default function Features() {
               }`}
             >
               <div
-                className={`w-fit lg:w-full  border-accent mx-auto transition-all duration-100 ease-linear ${
+                className={`w-fit lg:w-full  border-secondary mx-auto transition-all duration-100 ease-linear ${
                   setTab === i ? 'border-b-4' : ''
                 }`}
               >
                 <a
-                  href={`#${item.length}`}
+                  href={`#${item.toLowerCase()}`}
                   tabIndex={0}
-                  className="block text-center py-5 cursor-pointer"
+                  className="block text-center text-base-200 py-5 cursor-pointer hover:text-secondary"
                 >
                   {item}
                 </a>
@@ -55,7 +55,7 @@ export default function Features() {
         </ul>
       </div>
 
-      <div className="lg:relative hero prose mx-auto max-w-full px-3">
+      <div className="lg:relative hero prose mx-auto max-w-full px-3 prose-headings:text-base-200">
         {panels.map((panel, i) => (
           <Panels
             items={panel}
@@ -80,7 +80,7 @@ function Panels({ items, className }) {
       <div className="text-center lg:text-left max-w-sm">
         <h2>{items.title}</h2>
         <p className="text-neutral">{items.brief}</p>
-        <button className="btn bg-primary shadow-md hidden lg:block border-none">
+        <button className="btn bg-primary shadow-md hidden lg:block">
           {items.button}
         </button>
       </div>
