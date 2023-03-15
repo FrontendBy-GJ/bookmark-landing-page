@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import arrow from '../assets/icon-arrow.svg';
+import React, { useRef, useState } from 'react';
 
 export default function FAQ() {
-  const [showAnswer, setShowAnswer] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState('0');
 
-  const toggleAnswer = (i) =>
-    showAnswer === i ? setShowAnswer(null) : setShowAnswer(i);
+  function handleToggle(index) {
+    currentIndex === index ? setCurrentIndex('0') : setCurrentIndex(index);
+  }
 
   return (
     <section className="max-w-[1440px] mx-auto grid place-content-center py-40">
@@ -17,17 +17,16 @@ export default function FAQ() {
             like answered please feel free to email us.
           </p>
         </div>
-        {faq.map((item, i) => (
-          <Dropdown
-            faq={item}
-            key={i}
-            onClick={() => {
-              toggleAnswer(i);
-            }}
-            showAnswer={showAnswer}
-            i={i}
-          />
-        ))}
+        <ul className="mt-12 p-0 min-w-[330px]">
+          {faq.map((item, i) => (
+            <Dropdown
+              key={i}
+              faq={item}
+              onClick={() => handleToggle(i)}
+              active={currentIndex === i}
+            />
+          ))}
+        </ul>
         <button className="btn bg-primary shadow-md block mx-auto mt-10 px-8">
           More Info
         </button>
@@ -36,33 +35,47 @@ export default function FAQ() {
   );
 }
 
-function Dropdown({ faq, onClick, showAnswer, i }) {
+function Dropdown({ faq, onClick, active }) {
+  const { question, answer } = faq;
+
+  const contentEl = useRef();
+
   return (
-    <div className="overflow-hidden border-b border-t lg:border-t-0 py-4">
-      <div
+    <li className="list-none border-b">
+      <button
+        tabIndex={0}
         onClick={onClick}
-        className="flex items-center cursor-pointer justify-between"
+        className="flex items-center flex-nowrap w-full justify-between text-base-200 hover:text-secondary"
       >
-        <h5 className="hover:text-secondary flex-1">{faq.question}</h5>
+        {question}
         <svg
           className={`${
-            showAnswer === i ? 'rotate-180 stroke-secondary' : ''
-          } transition duration-300 ease-in-out stroke-primary`}
+            active ? 'rotate-180 stroke-secondary' : ''
+          } transition duration-300 ease stroke-primary`}
           xmlns="http://www.w3.org/2000/svg"
           width="18"
           height="12"
         >
           <path fill="none" strokeWidth="3" d="M1 1l8 8 8-8" />
         </svg>
-      </div>
-
-      <p
-        aria-hidden={showAnswer === i ? 'false' : 'true'}
-        className={`text-neutral ${showAnswer === i ? 'block' : 'hidden'}`}
+      </button>
+      <div
+        ref={contentEl}
+        className="overflow-hidden transition-all duration-300 ease"
+        style={
+          active ? { height: contentEl.current.scrollHeight } : { height: '0' }
+        }
       >
-        {faq.answer}
-      </p>
-    </div>
+        <p
+          aria-hidden={active ? 'false' : 'true'}
+          className={`text-neutral transition duration-700 ease ${
+            active ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          {answer}
+        </p>
+      </div>
+    </li>
   );
 }
 
