@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     <>
-      <div className="bg-primary mx-auto max-w-[1440px] px-5">
+      <div id="contact" className="bg-primary mx-auto max-w-[1440px] px-5">
         <div className="text-center text-white pt-16">
           <span className="text-xs block uppercase tracking-[4px] mb-3">
             35,000+ already joined
@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="mb-5 p-0.5 relative isolate flex-1 lg:mb-0">
             <div className="flex items-center bg-white rounded-md">
               <input
-                className="text-sm placeholder:text-neutral/50 text-base-200 flex-1 py-4 lg:py-3 pl-5 rounded outline-none focus:ring ring-inset ring-base-200"
+                className="text-sm placeholder:text-neutral/50 text-base-200 flex-1 py-4 lg:py-3 pl-5 rounded outline-none focus-visible:ring ring-inset ring-current"
                 type="text"
                 value={email}
                 onChange={handleEmailChange}
@@ -45,7 +45,7 @@ export default function Footer() {
               />
               {validation.length > 0 && (
                 <div className="bg-white mr-3">
-                  <img src={error} alt="" className="" />
+                  <img src={error} alt="" />
                 </div>
               )}
             </div>
