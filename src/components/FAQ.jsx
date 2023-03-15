@@ -56,7 +56,10 @@ function Dropdown({ faq, onClick, showAnswer, i }) {
         </svg>
       </div>
 
-      <p className={`text-neutral ${showAnswer === i ? 'block' : 'hidden'}`}>
+      <p
+        aria-hidden={showAnswer === i ? 'false' : 'true'}
+        className={`text-neutral ${showAnswer === i ? 'block' : 'hidden'}`}
+      >
         {faq.answer}
       </p>
     </div>

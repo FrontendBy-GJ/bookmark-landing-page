@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="mb-5 p-0.5 relative isolate flex-1 lg:mb-0">
             <div className="flex items-center bg-white rounded-md">
               <input
-                className="text-sm placeholder:text-neutral/50 flex-1 py-4 lg:py-1.5 pl-5 focus-visible:outline-none rounded"
+                className="text-sm placeholder:text-neutral/50 text-base-200 flex-1 py-4 lg:py-3 pl-5 rounded outline-none focus:ring ring-inset ring-base-200"
                 type="text"
                 value={email}
                 onChange={handleEmailChange}
@@ -59,8 +59,8 @@ export default function Footer() {
           </div>
 
           <button
-            className={`btn mx-auto block hover:btn-outline text-white bg-secondary  ${
-              validation.length > 0 ? 'mt-7 lg:mt-0' : ''
+            className={`btn w-full lg:w-fit hover:btn-outline text-white bg-secondary focus-visible:outline-base-200  ${
+              validation.length > 0 ? 'mt-4 lg:mt-0' : ''
             }`}
           >
             Contact Us
