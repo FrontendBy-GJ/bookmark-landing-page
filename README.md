@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: (https://www.frontendmentor.io/solutions/bookmark-landing-page-using-vitereact-tailwindcss-and-daisyui-rgmOUW_WRq)
+- Live Site URL: (https://garcia-jr-bookmark-landing-page.netlify.app/)
 
 ## My process
 
