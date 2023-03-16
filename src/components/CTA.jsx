@@ -8,17 +8,17 @@ export default function CTA() {
   return (
     <section
       id="pricing"
-      className="max-w-[1440px] min-h-screen grid place-content-center py-5 mx-auto"
+      className="mx-auto grid min-h-screen max-w-[1440px] place-content-center py-5"
     >
       <div className="px-7">
-        <div className="prose mx-auto text-center mb-10 max-w-lg prose-headings:text-base-200">
+        <div className="prose mx-auto mb-10 max-w-lg text-center prose-headings:text-base-200">
           <h2>Download the extension</h2>
           <p className="text-neutral">
             We’ve got more browsers in the pipeline. Please do let us know if
             you’ve got a favourite you’d like us to prioritize.
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row gap-10 max-w-4xl mx-auto lg:gap-4">
+        <div className="mx-auto flex max-w-4xl flex-col gap-10 lg:flex-row lg:gap-4">
           {extensions.map((item, i) =>
             extensions.length - 2 === i ? (
               <Card card={item} key={i} className="lg:mt-10" />
@@ -36,7 +36,7 @@ export default function CTA() {
 
 function Card({ card, className }) {
   return (
-    <div className={`card bg-white max-h-96 shadow-lg mx-auto ${className}`}>
+    <div className={`card mx-auto max-h-96 bg-white shadow-lg ${className}`}>
       <figure className="px-10 pt-10">
         <img src={card.logo} alt={card.alt} className="rounded-xl" />
       </figure>

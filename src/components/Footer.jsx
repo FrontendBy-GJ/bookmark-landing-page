@@ -17,9 +17,9 @@ export default function Footer() {
 
   return (
     <>
-      <div id="contact" className="bg-primary mx-auto max-w-[1440px] px-5">
-        <div className="text-center text-white pt-16">
-          <span className="text-xs block uppercase tracking-[4px] mb-3">
+      <div id="contact" className="mx-auto max-w-[1440px] bg-primary px-5">
+        <div className="pt-16 text-center text-white">
+          <span className="mb-3 block text-xs uppercase tracking-[4px]">
             35,000+ already joined
           </span>
           <span className="text-2xl font-medium">
@@ -29,13 +29,13 @@ export default function Footer() {
         </div>
         <form
           action=""
-          className="pt-5 pb-14 lg:flex gap-5 items-center max-w-sm mx-auto"
+          className="mx-auto max-w-sm items-center gap-5 pt-5 pb-14 lg:flex"
           onSubmit={handleFormSubmit}
         >
-          <div className="mb-5 p-0.5 relative isolate flex-1 lg:mb-0">
-            <div className="flex items-center bg-white rounded-md">
+          <div className="relative isolate mb-5 flex-1 p-0.5 lg:mb-0">
+            <div className="flex items-center rounded-md bg-white">
               <input
-                className="text-sm placeholder:text-neutral/50 text-base-200 flex-1 py-4 lg:py-3 pl-5 rounded outline-none focus-visible:ring ring-inset ring-current"
+                className="flex-1 rounded py-4 pl-5 text-sm text-base-200 outline-none ring-inset ring-current placeholder:text-neutral/50 focus-visible:ring lg:py-3"
                 type="text"
                 value={email}
                 onChange={handleEmailChange}
@@ -44,14 +44,14 @@ export default function Footer() {
                 placeholder="Enter you email address"
               />
               {validation.length > 0 && (
-                <div className="bg-white mr-3">
+                <div className="mr-3 bg-white">
                   <img src={error} alt="" />
                 </div>
               )}
             </div>
             {validation.length > 0 && (
               <span
-                className={`text-white text-xs italic pl-2 absolute bg-secondary rounded-md inset-0 top-0 -bottom-5 flex items-end -z-10 pb-1`}
+                className={`absolute inset-0 top-0 -bottom-5 -z-10 flex items-end rounded-md bg-secondary pl-2 pb-1 text-xs italic text-white`}
               >
                 {validation}
               </span>
@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
 
           <button
-            className={`btn w-full lg:w-fit hover:btn-outline text-white bg-secondary focus-visible:outline-base-200  ${
+            className={`btn w-full bg-secondary text-white hover:btn-outline focus-visible:outline-base-200 lg:w-fit  ${
               validation.length > 0 ? 'mt-4 lg:mt-0' : ''
             }`}
           >
@@ -67,8 +67,8 @@ export default function Footer() {
           </button>
         </form>
       </div>
-      <footer className="mx-auto max-w-[1440px] p-10 lg:p-4 bg-base-200">
-        <div className="max-w-md mx-auto lg:max-w-none flex flex-col lg:flex-row items-center justify-center">
+      <footer className="mx-auto max-w-[1440px] bg-base-200 p-10 lg:p-4">
+        <div className="mx-auto flex max-w-md flex-col items-center justify-center lg:max-w-none lg:flex-row">
           <svg
             className="mb-10 lg:mb-0"
             width="148"
@@ -90,20 +90,20 @@ export default function Footer() {
               </g>
             </g>
           </svg>
-          <div className="text-center prose tracking-wider flex-1 flex flex-col lg:flex-row gap-10 lg:pl-10">
+          <div className="prose flex flex-1 flex-col gap-10 text-center tracking-wider lg:flex-row lg:pl-10">
             {links.map((item) => (
               <a
                 href={`#${item.toLowerCase()}`}
                 key={item}
-                className="link link-hover text-neutral uppercase lg:text-xs"
+                className="link-hover link uppercase text-neutral lg:text-xs"
               >
                 {item}
               </a>
             ))}
           </div>
-          <div className="text-center space-x-10 mt-10 lg:mt-0 ">
+          <div className="mt-10 space-x-10 text-center lg:mt-0 ">
             <svg
-              className="hover:fill-secondary fill-white cursor-pointer inline"
+              className="inline cursor-pointer fill-white hover:fill-secondary"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -114,7 +114,7 @@ export default function Footer() {
               />
             </svg>
             <svg
-              className="hover:fill-secondary fill-white cursor-pointer inline"
+              className="inline cursor-pointer fill-white hover:fill-secondary"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="20"

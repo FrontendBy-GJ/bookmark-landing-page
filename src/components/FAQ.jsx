@@ -8,8 +8,8 @@ export default function FAQ() {
   }
 
   return (
-    <section className="max-w-[1440px] mx-auto grid place-content-center py-40">
-      <div className="px-7 prose max-w-lg prose-headings:text-base-200">
+    <section className="mx-auto grid max-w-[1440px] place-content-center py-40">
+      <div className="prose max-w-lg px-7 prose-headings:text-base-200">
         <div className="text-center">
           <h2>Frequently Asked Questions</h2>
           <p className="text-neutral">
@@ -17,7 +17,7 @@ export default function FAQ() {
             like answered please feel free to email us.
           </p>
         </div>
-        <ul className="mt-12 p-0 min-w-[330px]">
+        <ul className="mt-12 min-w-[330px] p-0">
           {faq.map((item, i) => (
             <Dropdown
               key={i}
@@ -27,7 +27,7 @@ export default function FAQ() {
             />
           ))}
         </ul>
-        <button className="btn bg-primary shadow-md block mx-auto mt-10 px-8">
+        <button className="btn mx-auto mt-10 block bg-primary px-8 shadow-md">
           More Info
         </button>
       </div>
@@ -45,13 +45,13 @@ function Dropdown({ faq, onClick, active }) {
       <button
         tabIndex={0}
         onClick={onClick}
-        className="flex items-center flex-nowrap w-full justify-between text-base-200 hover:text-secondary"
+        className="flex w-full flex-nowrap items-center justify-between text-base-200 hover:text-secondary"
       >
         {question}
         <svg
           className={`${
             active ? 'rotate-180 stroke-secondary' : ''
-          } transition duration-300 ease stroke-primary`}
+          } ease stroke-primary transition duration-300`}
           xmlns="http://www.w3.org/2000/svg"
           width="18"
           height="12"
@@ -61,14 +61,14 @@ function Dropdown({ faq, onClick, active }) {
       </button>
       <div
         ref={contentEl}
-        className="overflow-hidden transition-all duration-300 ease"
+        className="ease overflow-hidden transition-all duration-300"
         style={
           active ? { height: contentEl.current.scrollHeight } : { height: '0' }
         }
       >
         <p
           aria-hidden={active ? 'false' : 'true'}
-          className={`text-neutral transition duration-700 ease ${
+          className={`ease text-neutral transition duration-700 ${
             active ? 'opacity-100' : 'opacity-0'
           }`}
         >

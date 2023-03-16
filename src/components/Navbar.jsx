@@ -21,8 +21,8 @@ export default function Navbar() {
 
   return (
     <header className="bg-white">
-      <div className="navbar max-w-[1440px] mx-auto flex-row justify-center py-10 px-5 md:px-10 xl:px-28">
-        <div className="flex-1 z-50">
+      <div className="navbar mx-auto max-w-[1440px] flex-row justify-center py-10 px-5 md:px-10 xl:px-28">
+        <div className="z-50 flex-1">
           <svg
             className="cursor-pointer"
             width="148"
@@ -58,18 +58,18 @@ export default function Navbar() {
               <a
                 href={`#${item}`}
                 key={item}
-                className="uppercase text-sm text-base-200 hover:text-secondary tracking-wider"
+                className="text-sm uppercase tracking-wider text-base-200 hover:text-secondary"
               >
                 {item}
               </a>
             ))}
           </nav>
-          <button className="btn bg-secondary hover:border-secondary text-white hover:text-secondary uppercase ml-10 px-12 rounded-md shadow-lg">
+          <button className="btn ml-10 rounded-md bg-secondary px-12 uppercase text-white shadow-lg hover:border-secondary hover:text-secondary">
             log in
           </button>
         </div>
 
-        <div className="lg:hidden z-50">
+        <div className="z-50 lg:hidden">
           {!showNav ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -104,15 +104,15 @@ export default function Navbar() {
       {/* mobile nav menu */}
       {showNav && (
         <section
-          className={`fixed top-0 w-full bg-base-200/95 h-screen flex flex-col p-8 lg:hidden items-center z-40`}
+          className={`fixed top-0 z-40 flex h-screen w-full flex-col items-center bg-base-200/95 p-8 lg:hidden`}
         >
-          <nav aria-label="mobile" className="mx-auto w-full mt-16">
+          <nav aria-label="mobile" className="mx-auto mt-16 w-full">
             {links.map((item, i) => (
               <a
                 href={`#${item}`}
                 onClick={closeMenu}
                 key={item}
-                className={`block text-white uppercase hover:bg-neutral/50 py-5 text-center border-neutral/30 tracking-widest font-normal ${
+                className={`block border-neutral/30 py-5 text-center font-normal uppercase tracking-widest text-white hover:bg-neutral/50 ${
                   links.length - 3 === i
                     ? 'border-t'
                     : links.length - 2 === i
@@ -125,12 +125,12 @@ export default function Navbar() {
             ))}
           </nav>
           <div className="mt-6 w-full">
-            <button className="btn btn-outline hover:bg-white hover:text-base-200 hover:border-inherit uppercase text-white tracking-wider text-lg w-full sm:max-w-sm mx-auto block rounded-md font-normal">
+            <button className="btn-outline btn mx-auto block w-full rounded-md text-lg font-normal uppercase tracking-wider text-white hover:border-inherit hover:bg-white hover:text-base-200 sm:max-w-sm">
               log in
             </button>
           </div>
 
-          <div className="flex mt-auto gap-8">
+          <div className="mt-auto flex gap-8">
             <img src={facebook} alt="facebook logo" />
             <img src={twitter} alt="twitter logo" />
           </div>
