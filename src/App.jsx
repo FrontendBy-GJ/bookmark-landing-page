@@ -9,10 +9,12 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Features />
-      <CTA />
-      <FAQ />
+      <main>
+        <Hero />
+        <Features />
+        <CTA />
+        <FAQ />
+      </main>
       <Footer />
     </>
   );
